@@ -21,6 +21,7 @@ import jakarta.persistence.TemporalType;
 import java.time.Instant;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -115,6 +116,33 @@ public class User {
   @NonNull
   public List<Game> getGames() {
     return games;
+  }
+
+  @Override
+  public int hashCode() {
+    //noinspection ConstantValue
+    return (id != null)
+        ? id.hashCode()
+        : Objects.hash(displayName, oauthKey);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    boolean equals;
+    if (this == obj) {
+      equals = true;
+    } else if (obj instanceof User other) {
+      //noinspection SimplifiableConditionalExpression,ConstantValue
+      equals = (this.id != null && other.id != null)
+          ? this.id.equals(other.id)
+          : ((this.id == null) != (other.id == null))
+              ? false
+              : this.displayName.equals(other.displayName) && this.oauthKey.equals(other.oauthKey);
+
+    } else {
+      equals = false;
+    }
+    return equals;
   }
 
   @PrePersist
