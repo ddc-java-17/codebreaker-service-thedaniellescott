@@ -12,11 +12,11 @@ public interface GuessRepository extends JpaRepository<Guess, Long> {
 
   Optional<Guess> findGuessByKeyAndGame(UUID key, Game game);
 
-  @Query("SELECT Guess FROM Guess "
-      + "JOIN Guess.game AS gm "
+  @Query("SELECT gs FROM Guess AS gs "
+      + "JOIN gs.game AS gm "
       + "JOIN gm.user "
       + "WHERE gs.key = :guessKey "
-      + "AND gm.key = gameKey "
+      + "AND gm.key = :gameKey "
       + "AND gm.user = :user")
   Optional<Guess> findGuessByGameAndGuessKeysAndUser(UUID gameKey, UUID guessKey, User user);
 

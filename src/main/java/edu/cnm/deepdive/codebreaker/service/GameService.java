@@ -90,7 +90,7 @@ public class GameService implements AbstractGameService {
 
   private static void validateGuess(Guess guess, Game game) {
     if (game.isSolved()) {
-      throw new InvalidGuessException()
+      throw new InvalidGuessException();
     }
     if (guess.getGuessText().codePoints().count() != game.getLength()) {
       throw new InvalidGuessException();
@@ -130,7 +130,7 @@ public class GameService implements AbstractGameService {
         .mapToInt((entry) ->
             Math.min(entry.getValue(), codeOccurences.getOrDefault(entry.getKey(), 0)))
         .sum();
-    return new int[]{close, correct};
+    return new int[]{correct, close};
   }
 
 }
