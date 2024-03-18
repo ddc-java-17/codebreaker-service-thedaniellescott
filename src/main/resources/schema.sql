@@ -3,6 +3,7 @@ SELECT
     gm.user_id,
     gm.pool_size,
     gm.length,
+    gm.user_id AS user_fk_id,
     COUNT(*) AS game_count,
     AVG(agg.guess_count) AS avg_guess_count,
     AVG(agg.duration) AS avg_duration

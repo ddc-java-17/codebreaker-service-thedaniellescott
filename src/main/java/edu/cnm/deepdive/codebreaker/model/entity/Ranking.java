@@ -36,7 +36,7 @@ public class Ranking {
   private double avgDuration;
 
   @ManyToOne(fetch = FetchType.EAGER, optional = false)
-  @JoinColumn(name = "user_id", nullable = false, updatable = false)
+  @JoinColumn(name = "user_fk_id", nullable = false, updatable = false, insertable = false)
   private User user;
 
   public long getUserId() {
