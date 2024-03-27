@@ -32,6 +32,7 @@ import java.util.UUID;
 import org.hibernate.annotations.CreationTimestamp;
 import org.springframework.lang.NonNull;
 
+@SuppressWarnings("JpaDataSourceORMInspection")
 @Entity
 @Table(indexes = @Index(columnList = "user_id, created"))
 @JsonInclude(Include.NON_NULL)
@@ -39,7 +40,7 @@ import org.springframework.lang.NonNull;
 public class Game {
 
   public static final int MAX_CODE_LENGTH = 12;
-  private static final int MAX_POOL_LENGTH = 20;
+  public static final int MAX_POOL_LENGTH = 20;
 
   @NonNull
   @Id

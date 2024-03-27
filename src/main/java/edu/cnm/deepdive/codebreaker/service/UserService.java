@@ -86,7 +86,7 @@ public class UserService implements AbstractUserService {
   }
 
   @Override
-  public Set<User> getFollwers(User requester) {
+  public Set<User> getFollowers(User requester) {
     return userRepository.findById(requester.getId())
         .map(User::getFollowingUsers)
         .orElseThrow();

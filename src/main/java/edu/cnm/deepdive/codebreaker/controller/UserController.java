@@ -43,7 +43,7 @@ public class UserController {
 
   @GetMapping(path = "/me/followers", produces = MediaType.APPLICATION_JSON_VALUE)
   public Set<User> getFollowers() {
-    return userService.getFollwers(userService.getCurrentUser());
+    return userService.getFollowers(userService.getCurrentUser());
   }
 
 }

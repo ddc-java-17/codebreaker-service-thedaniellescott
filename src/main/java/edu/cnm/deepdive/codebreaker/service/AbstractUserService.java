@@ -19,7 +19,7 @@ public interface AbstractUserService {
 
   Set<User> getFollows(User requester);
 
-  Set<User> getFollwers(User requester);
+  Set<User> getFollowers(User requester);
 
 
 

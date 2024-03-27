@@ -6,10 +6,10 @@ import java.util.List;
 
 public interface RankingRepository extends ReadOnlyRepository<Ranking, RankingId>{
 
-  List<Ranking> findAllByPoolSizeAndLengthOrderByAvgGuessCountAscAvgDurationAsc(
+  List<Ranking> findAllByIdPoolSizeAndIdLengthOrderByAvgGuessCountAscAvgDurationAsc(
       int poolSize, int length);
 
-  List<Ranking> findAllByPoolSizeAndLengthAndGameCountGreaterThanEqualOrderByAvgGuessCountAscAvgDurationAsc(
+  List<Ranking> findAllByIdPoolSizeAndIdLengthAndGameCountGreaterThanEqualOrderByAvgGuessCountAscAvgDurationAsc(
       int poolSize, int length, int gameCountThreshold);
 
 }
