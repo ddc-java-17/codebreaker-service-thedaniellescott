@@ -40,7 +40,7 @@ import org.springframework.lang.NonNull;
 public class Game {
 
   public static final int MAX_CODE_LENGTH = 12;
-  private static final int MAX_POOL_LENGTH = 20;
+  public static final int MAX_POOL_LENGTH = 20;
 
   @NonNull
   @Id
